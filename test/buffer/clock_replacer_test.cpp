@@ -19,7 +19,7 @@
 
 namespace bustub {
 
-TEST(ClockReplacerTest, DISABLED_SampleTest) {
+TEST(ClockReplacerTest, SampleTest) {
   ClockReplacer clock_replacer(7);
 
   // Scenario: unpin six elements, i.e. add them to the replacer.
@@ -49,7 +49,7 @@ TEST(ClockReplacerTest, DISABLED_SampleTest) {
 
   // Scenario: unpin 4. We expect that the reference bit of 4 will be set to 1.
   clock_replacer.Unpin(4);
-
+  EXPECT_EQ(3, clock_replacer.Size());
   // Scenario: continue looking for victims. We expect these victims.
   clock_replacer.Victim(&value);
   EXPECT_EQ(5, value);
